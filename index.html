@@ -16,16 +16,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <script src="/js/script.js" defer></script>
 
-    <script>
-        (function () {
-            var tema = "light";
-            try {
-                tema = localStorage.getItem("tema") ||
-                    (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-            } catch (e) {}
-            document.documentElement.setAttribute("data-bs-theme", tema);
-        })();
-    </script>
+  
 </head>
 <body>
 
@@ -322,27 +313,7 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
 
-        <script>
-    (function () {
-        var tombol = document.getElementById("themeToggle");
-        var root = document.documentElement;
-
-        function perbarui() {
-            var gelap = root.getAttribute("data-bs-theme") === "dark";
-            tombol.textContent = gelap ? "☀️ Terang" : "🌙 Gelap";
-            tombol.setAttribute("aria-pressed", gelap);
-        }
-
-        tombol.addEventListener("click", function () {
-            var baru = root.getAttribute("data-bs-theme") === "dark" ? "light" : "dark";
-            root.setAttribute("data-bs-theme", baru);
-            try { localStorage.setItem("tema", baru); } catch (e) {}
-            perbarui();
-        });
-
-        perbarui();
-    })();
-</script>
+       
 
 </body>
 </html>
